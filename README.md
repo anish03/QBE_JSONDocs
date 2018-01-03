@@ -18,21 +18,21 @@ get {}
 ## Output
 
 ```
-{"id":1,"last":"Doe","first":"John","location":{"city":"Oakland","state":"CA","postalCode":"94607"},"active":true}
-{"id":2,"last":"Doe","first":"Jane","location":{"city":"San Francisco","state":"CA","postalCode":"94105"},"active":true}
-{"id":3,"last":"Black","first":"Jim","location":{"city":"Spokane","state":"WA","postalCode":"99207"},"active":true}
+{"id":1,"last":"Doe","first":"John","location":{"city":"Oakland","state":"CA"},"active":true}
+{"id":2,"last":"Stevens","first":"Jane","location":{"city":"San Francisco","state":"CA"},"active":true}
+{"id":3,"last":"Black","first":"Jack","location":{"city":"San Jose","state":"CA"},"active":true}
 
 
 
-{"id":1,"last":"Doe","first":"John","location":{"city":"Oakland","state":"CA","postalCode":"94607"},"active":true}
+{"id":1,"last":"Doe","first":"John","location":{"city":"Oakland","state":"CA"},"active":true}
 
 
 
-{"id":1,"last":"Doe","first":"John","location":{"city":"Oakland","state":"CA","postalCode":"94607"},"active":true}
-{"id":2,"last":"Doe","first":"Jane","location":{"city":"San Francisco","state":"CA","postalCode":"94105"},"active":true}
-{"id":3,"last":"Black","first":"Jim","location":{"city":"Spokane","state":"WA","postalCode":"99207"},"active":true}
+{"id":1,"last":"Doe","first":"John","location":{"city":"Oakland","state":"CA"},"active":true}
+{"id":2,"last":"Stevens","first":"Jane","location":{"city":"San Francisco","state":"CA"},"active":true}
+{"id":3,"last":"Black","first":"Jack","location":{"city":"San Jose","state":"CA"},"active":true}
 
 
 
-{"id":4,"last":"Frost","first":"Jack","location":{"city":"Seattle","state":"WA","postalCode":"98204"},"active":false}
+{"id":4,"last":"Smith","first":"James","location":{"city":"Seattle","state":"WA"},"active":false}
 ```
