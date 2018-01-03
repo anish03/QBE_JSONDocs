@@ -38,11 +38,11 @@ def insert(query,JSONstore,timeStamp):
     :return: null
     """
     if query.__contains__('location'):
-        data = query.strip('insert ')
+        data = query.strip('add ')
         if query.__contains__('location'):
-            query = query.strip('insert ').strip('}').strip(' {').replace('"','').replace('location:{','').replace('}','').split(',')
+            query = query.strip('add ').strip('}').strip(' {').replace('"','').replace('location:{','').replace('}','').split(',')
         else:
-            query = query.strip('insert ').strip('}').strip(' {').replace('"','').replace('}','').split(',')
+            query = query.strip('add ').strip('}').strip(' {').replace('"','').replace('}','').split(',')
 
         _id = query[0].split(':')[1]
         JSONstore[_id] = data
@@ -55,11 +55,11 @@ def insert(query,JSONstore,timeStamp):
         for l in lines:
             global list_counter
             list_counter += 1
-            JSONstore[str(list_counter)] = query.strip('insert ')
+            JSONstore[str(list_counter)] = query.strip('add ')
             timeStamp[str(list_counter)] = time.time()
     else:
-        data = query.strip('insert ')
-        query = query.strip('insert ').strip('}').strip(' {').replace('"','').replace('}','').split(',')
+        data = query.strip('add ')
+        query = query.strip('add ').strip('}').strip(' {').replace('"','').replace('}','').split(',')
 
         _id = query[0].split(':')[1]
         JSONstore[_id] = data
