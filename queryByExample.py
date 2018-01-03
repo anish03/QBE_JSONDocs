@@ -44,7 +44,6 @@ def add(query,JSONstore,timeStamp):
         else:
             query = query.strip('add ').strip('}').strip(' {').replace('"','').replace('}','').split(',')
 
-        print query
         _id = query[0].split(':')[1]
         JSONstore[_id] = data
         timeStamp[_id] = time.time()
