@@ -11,21 +11,22 @@ def checkUserData(params,idx,JSONstore,timeStamp):
     values = [x for x in JSONstore.keys()]
 
     for val in values:
+
         try:
             if type(int(params[0])) == int:
                 idx.append(params[0])
                 break
         except ValueError:
             r = len(params)
-            flag = False
+            flag = []
 
             for i in range(0,r):
                 if params[i] in JSONstore[val]:
-                    flag = True
+                    flag.append(True)
                 else:
-                    flag = False
+                    flag.append(False)
 
-            if flag:
+            if False not in flag:
                 idx.append(val)
 
     return_list = list(set(idx))
