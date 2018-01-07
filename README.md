@@ -18,11 +18,6 @@ get {}
 ## Output
 
 ```
-{"id":1,"last":"Doe","first":"John","location":{"city":"Oakland","state":"CA"},"active":true}
-{"id":2,"last":"Stevens","first":"Jane","location":{"city":"San Francisco","state":"CA"},"active":true}
-{"id":3,"last":"Black","first":"Jack","location":{"city":"San Jose","state":"CA"},"active":true}
-
-
 
 {"id":1,"last":"Doe","first":"John","location":{"city":"Oakland","state":"CA"},"active":true}
 
