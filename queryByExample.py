@@ -9,24 +9,23 @@ def checkUserData(params,idx,JSONstore,timeStamp):
     :return: a list of users that satisfy the constraints in the 'get' command
     """
     values = [x for x in JSONstore.keys()]
-
     for val in values:
-
         try:
             if type(int(params[0])) == int:
                 idx.append(params[0])
                 break
         except ValueError:
             r = len(params)
-            flag = []
+            flag = True
 
             for i in range(0,r):
-                if params[i] in JSONstore[val]:
-                    flag.append(True)
-                else:
-                    flag.append(False)
+                if flag:
+                    if params[i] in JSONstore[val]:
+                        flag = True
+                    else:
+                        flag = False
 
-            if False not in flag:
+            if flag:
                 idx.append(val)
 
     return_list = list(set(idx))
@@ -39,11 +38,11 @@ def insert(query,JSONstore,timeStamp):
     :return: null
     """
     if query.__contains__('location'):
-        data = query.strip('add ')
+        data = query.strip('insert ')
         if query.__contains__('location'):
-            query = query.strip('add ').strip('}').strip(' {').replace('"','').replace('location:{','').replace('}','').split(',')
+            query = query.strip('insert ').strip('}').strip(' {').replace('"','').replace('location:{','').replace('}','').split(',')
         else:
-            query = query.strip('add ').strip('}').strip(' {').replace('"','').replace('}','').split(',')
+            query = query.strip('insert ').strip('}').strip(' {').replace('"','').replace('}','').split(',')
 
         _id = query[0].split(':')[1]
         JSONstore[_id] = data
@@ -56,11 +55,11 @@ def insert(query,JSONstore,timeStamp):
         for l in lines:
             global list_counter
             list_counter += 1
-            JSONstore[str(list_counter)] = query.strip('add ')
+            JSONstore[str(list_counter)] = query.strip('insert ')
             timeStamp[str(list_counter)] = time.time()
     else:
-        data = query.strip('add ')
-        query = query.strip('add ').strip('}').strip(' {').replace('"','').replace('}','').split(',')
+        data = query.strip('insert ')
+        query = query.strip('insert ').strip('}').strip(' {').replace('"','').replace('}','').split(',')
 
         _id = query[0].split(':')[1]
         JSONstore[_id] = data
@@ -113,7 +112,7 @@ def get(query,JSONstore,timeStamp):
             return_list.append(key)
 
         for item in return_list:
-            print JSONstore[item]
+            print JSONstore[item].strip('add ')
 
         print '\n\n'
 
@@ -155,7 +154,7 @@ def main():
         if ip[0] == 'g':
             if ip[0] == 'g' and ip[5] == '}':
                 for key, value in sorted(timeStamp.iteritems(), key=lambda (k,v): (v,k)):
-                    print JSONstore[key]
+                    print JSONstore[key].strip('add ')
             else:
                 get(ip,JSONstore,timeStamp)
         elif ip[0] == 'd':
